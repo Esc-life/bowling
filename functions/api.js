@@ -2,21 +2,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const serverless = require('serverless-http');
 
 const app = express();
-const PORT = 3000;
-const DB_FILE = path.join(__dirname, 'scores.json');
+const router = express.Router();
 
-app.use(express.static('public'));
-app.use(bodyParser.json());
+// Use a temporary directory for the database file in a serverless environment
+const DB_FILE = path.join('/tmp', 'scores.json');
 
 // Initialize database file if it doesn't exist
 if (!fs.existsSync(DB_FILE)) {
     fs.writeFileSync(DB_FILE, JSON.stringify({ players: {} }, null, 2));
 }
 
-// Endpoint to get all scores
-app.get('/api/scores', (req, res) => {
+// Serve static files from 'public' directory
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
+router.get('/scores', (req, res) => {
     fs.readFile(DB_FILE, 'utf8', (err, data) => {
         if (err) {
             return res.status(500).send('Error reading scores data.');
@@ -25,8 +27,7 @@ app.get('/api/scores', (req, res) => {
     });
 });
 
-// Endpoint to save/update a player's score
-app.post('/api/login', (req, res) => {
+router.post('/login', (req, res) => {
     const { name } = req.body;
     if (!name) {
         return res.status(400).send('Player name is required.');
@@ -53,7 +54,7 @@ app.post('/api/login', (req, res) => {
     });
 });
 
-app.post('/api/scores', (req, res) => {
+router.post('/scores', (req, res) => {
     const { name, score, strikes } = req.body;
     if (!name || score === undefined || strikes === undefined) {
         return res.status(400).send('Player name, score, and strikes are required.');
@@ -82,7 +83,7 @@ app.post('/api/scores', (req, res) => {
     });
 });
 
+app.use(bodyParser.json());
+app.use('/api', router);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+module.exports.handler = serverless(app);
