@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+body {
+    background-color: #f0f8ff; /* AliceBlue */
+    font-family: 'Gaegu', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 5px dashed #ffd166; /* Sunglow */
+}
+
+h1 {
+    color: #ef476f; /* Paradise Pink */
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.8em;
+    color: #118ab2; /* Pacific Blue */
+}
+
+#name-input {
+    width: 80%;
+    padding: 15px;
+    margin-top: 20px;
+    border: 3px solid #06d6a0; /* Caribbean Green */
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Gaegu', cursive;
+    text-align: center;
+}
+
+#name-input::placeholder {
+    color: #ccc;
+}
+
+#login-button {
+    background-color: #ffd166; /* Sunglow */
+    color: #333;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.8em;
+    font-family: 'Gaegu', cursive;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: transform 0.2s;
+    font-weight: bold;
+}
+
+#login-button:hover {
+    transform: scale(1.1);
+}

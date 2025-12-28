@@ -1,0 +1,99 @@
+#scoreboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    border: 3px solid #118ab2;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+.frame {
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.frame-header {
+    background-color: #118ab2;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.frame-scores {
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.frame-score {
+    width: 50%;
+    border-left: 1px solid #ccc;
+    line-height: 30px;
+}
+
+.frame-total {
+    background-color: #f0f8ff;
+    padding: 5px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+#bowling-lane {
+    width: 200px;
+    height: 600px;
+    background-color: #f5deb3; /* Wheat */
+    border: 5px solid #8b4513; /* SaddleBrown */
+    margin: 20px auto;
+    position: relative;
+    perspective: 800px;
+}
+
+#pins-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+.pin {
+    width: 10px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+}
+
+#bowling-ball {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+#throw-button {
+    background-color: #ef476f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.8em;
+    font-family: 'Gaegu', cursive;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#throw-button:hover {
+    transform: scale(1.1);
+}
