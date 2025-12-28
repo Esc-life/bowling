@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>같이하기 로비</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>게임 로비</h1>
+        <div id="lobby-controls">
+            <input type="text" id="lobby-id-input" placeholder="참가할 로비 ID 입력">
+            <button id="join-lobby-button">로비 참가</button>
+            <hr>
+            <button id="create-lobby-button">새로운 로비 만들기</button>
+        </div>
+        <div id="lobby-wait-screen" style="display: none;">
+            <h2>로비 ID: <span id="lobby-id-display"></span></h2>
+            <p>친구들을 초대해! 아래 플레이어들이 모두 모이면 시작할 수 있어.</p>
+            <h3>플레이어 목록</h3>
+            <ul id="player-list"></ul>
+            <button id="start-game-button">게임 시작!</button>
+        </div>
+    </div>
+    <script src="lobby.js"></script>
+</body>
+</html>

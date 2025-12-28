@@ -63,3 +63,28 @@ p {
 #login-button:hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        border-width: 3px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    #name-input {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    #login-button {
+        font-size: 1.5em;
+        padding: 12px 25px;
+    }
+}

@@ -50,7 +50,7 @@
 
 #pins-container {
     position: absolute;
-    bottom: 50px;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -82,18 +82,73 @@
     margin-top: 20px;
 }
 
-#throw-button {
-    background-color: #ef476f;
-    color: white;
-    border: none;
-    padding: 15px 30px;
+#throw-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background-color: #f0f8ff;
+    padding: 15px;
     border-radius: 10px;
-    font-size: 1.8em;
-    font-family: 'Gaegu', cursive;
-    cursor: pointer;
-    transition: transform 0.2s;
 }
 
-#throw-button:hover {
-    transform: scale(1.1);
+.control-group {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #118ab2;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+}
+
+#celebration-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: white;
+    background-color: rgba(239, 71, 111, 0.85);
+    padding: 30px 60px;
+    border-radius: 25px;
+    font-size: 5em;
+    font-weight: bold;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+#celebration-animation.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    #scoreboard {
+        max-width: 100%;
+        font-size: 0.8em;
+    }
+
+    .frame-scores {
+        height: 25px;
+    }
+
+    .frame-score {
+        line-height: 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #bowling-lane {
+        width: 150px;
+        height: 450px;
+    }
+
+    #throw-button {
+        font-size: 1.5em;
+    }
 }

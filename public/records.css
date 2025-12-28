@@ -52,3 +52,18 @@ li .player-score {
 #play-again-button:hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    li {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    #play-again-button {
+        font-size: 1.5em;
+    }
+}

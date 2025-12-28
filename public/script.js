@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 // For now, just store name and move to a placeholder game screen
                 localStorage.setItem('playerName', name);
-                alert(`안녕, ${name}! 이제 게임을 시작하자!`);
-                window.location.href = '/game.html'; // To be created
+                window.location.href = '/mode-selection.html';
             } else {
                 alert('로그인에 실패했어. 다시 시도해줘!');
             }

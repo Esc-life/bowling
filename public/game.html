@@ -10,17 +10,39 @@
 <body>
     <div class="container">
         <h1 id="player-name-display">플레이어's Game</h1>
-        <div id="scoreboard">
-            <!-- 점수판은 script.js에서 동적으로 생성됩니다. -->
-        </div>
-        <div id="bowling-lane">
-            <div id="pins-container">
-                <!-- 핀들은 script.js에서 동적으로 생성됩니다. -->
+        <div id="game-area">
+            <div id="main-lane">
+                <div id="scoreboard">
+                    <!-- 점수판은 script.js에서 동적으로 생성됩니다. -->
+                </div>
+                <div id="bowling-lane">
+                    <div id="pins-container">
+                        <!-- 핀들은 script.js에서 동적으로 생성됩니다. -->
+                    </div>
+                    <div id="bowling-ball"></div>
+                </div>
+                <div id="controls">
+                    <div id="throw-controls">
+                        <div class="control-group">
+                            <label for="spin-control">🌪️ 스핀</label>
+                            <input type="range" id="spin-control" min="-10" max="10" value="0">
+                        </div>
+                        <div class="control-group">
+                            <label for="position-control">📍 위치</label>
+                            <input type="range" id="position-control" min="-3" max="3" value="0">
+                        </div>
+                        <div class="control-group">
+                            <label for="power-control">💥 파워</label>
+                            <input type="range" id="power-control" min="1" max="10" value="5">
+                        </div>
+                    </div>
+                    <button id="throw-button">공 굴리기!</button>
+                </div>
             </div>
-            <div id="bowling-ball"></div>
-        </div>
-        <div id="controls">
-            <button id="throw-button">공 굴리기!</button>
+            <div id="side-scoreboards">
+                <h2>다른 친구들 점수</h2>
+                <!-- 다른 플레이어들의 점수판이 여기에 추가됩니다. -->
+            </div>
         </div>
     </div>
 
